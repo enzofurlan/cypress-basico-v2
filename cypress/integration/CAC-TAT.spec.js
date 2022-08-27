@@ -190,5 +190,15 @@ describe('Central de Atendimento ao Cliente TAT', function() {
             expect(response.body).to.contain('CAC TAT')
           })
     })
+
+    it('desafio (encontre o gato) 🐈', function() {
+        cy.get('[id="cat"]')
+          .should('not.be.visible')
+          .invoke('show')
+          .should('be.visible')
+          .and('contain', '🐈')
+          .invoke('hide')
+          .should('not.be.visible')
+      })
 })
   
